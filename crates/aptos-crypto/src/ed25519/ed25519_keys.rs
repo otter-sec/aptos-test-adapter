@@ -48,7 +48,7 @@ impl Ed25519PrivateKey {
     }
 
     /// Deserialize an Ed25519PrivateKey without any validation checks apart from expected key size.
-    fn from_bytes_unchecked(
+    pub fn from_bytes_unchecked(
         bytes: &[u8],
     ) -> std::result::Result<Ed25519PrivateKey, CryptoMaterialError> {
         match ed25519_dalek::SecretKey::from_bytes(bytes) {
